@@ -1,0 +1,56 @@
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="creyente.email" name="email" type="email" required>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input matInput [(ngModel)]="creyente.password" name="password" type="password" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input matInput [(ngModel)]="creyente.usuario" name="usuario" required>
+      </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nombres</mat-label>
+        <input matInput [(ngModel)]="creyente.nombre" name="nombre" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Apellidos</mat-label>
+        <input matInput [(ngModel)]="creyente.apellidos" name="apellidos" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Telefono</mat-label>
+        <input matInput [(ngModel)]="creyente.telefono" name="telefono" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Pais</mat-label>
+        <input matInput [(ngModel)]="creyente.pais" name="pais" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Lenguaje</mat-label>
+        <mat-select [(ngModel)]="creyente.lenguaje" name="lenguaje" required>
+            <mat-option value="español">Español</mat-option>
+            <mat-option value="inglés">Inglés</mat-option>
+            <mat-option value="francés">Francés</mat-option>
+            <mat-option value="alemán">Alemán</mat-option>
+            <mat-option value="portugués">Portugués</mat-option>
+            <mat-option value="chino">Chino</mat-option>
+            <mat-option value="japonés">Japonés</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Religion</mat-label>
+        <input matInput [(ngModel)]="creyente.religion" name="religion" required>
+      </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Registrarse</button>
+  </form>

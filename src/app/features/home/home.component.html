@@ -1,0 +1,80 @@
+<div class="home-container mat-elevation-z2">
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h1 class="mat-display-2">Bienvenido a la Comunidad de Fe</h1>
+        <p class="mat-subheading-2">"Donde dos o más se reúnen en mi nombre, allí estoy yo" - Mateo 18:20</p>
+        <button mat-raised-button color="primary" routerLink="/creyentes/registro">
+          <mat-icon>person_add</mat-icon>
+          Únete ahora
+        </button>
+      </div>
+    </section>
+  
+    <!-- Features Section -->
+    <section class="features-section">
+      <h2 class="section-title mat-headline">Nuestras Comunidades</h2>
+      
+      <div class="features-grid">
+        <mat-card *ngFor="let feature of features" class="feature-card mat-elevation-z4">
+          <mat-card-header>
+            <div mat-card-avatar class="feature-icon">
+              <mat-icon>{{feature.icon}}</mat-icon>
+            </div>
+            <mat-card-title>{{feature.title}}</mat-card-title>
+            <mat-card-subtitle>{{feature.description}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="feature.image" [alt]="feature.title">
+          <mat-card-actions>
+            <button mat-button [color]="feature.color" [routerLink]="feature.route">
+              <mat-icon>arrow_forward</mat-icon>
+              Acceder
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </section>
+  
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <h2 class="section-title mat-headline">Testimonios Reales</h2>
+      
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let testimonio of testimonios" class="testimonio-panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>account_circle</mat-icon>
+              {{testimonio.author}}, {{testimonio.age}} años
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="testimonio-content">
+            <img mat-card-sm-image [src]="testimonio.image" alt="Foto de perfil">
+            <p class="mat-body-1">"{{testimonio.text}}"</p>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      
+      <div class="testimonial-actions">
+        <button mat-stroked-button color="primary" (click)="addTestimonio()">
+          <mat-icon>add</mat-icon>
+          Comparte tu testimonio
+        </button>
+      </div>
+    </section>
+  
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <mat-card class="cta-card mat-elevation-z8">
+        <mat-card-content>
+          <h2 class="mat-headline">¿Listo para profundizar en tu fe?</h2>
+          <p class="mat-body-1">Únete a nuestros grupos de estudio bíblico y eventos para jóvenes</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="accent">
+            <mat-icon>event</mat-icon>
+            Ver próximos eventos
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </section>
+  </div>
